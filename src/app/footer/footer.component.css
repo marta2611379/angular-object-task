@@ -1,0 +1,13 @@
+.container-fluid{
+    display: flex;
+}
+
+.container-table{
+width: 800px;
+margin: 30px;
+}
+
+.container-form{
+    width: 300px;
+    margin: 30px;
+}

@@ -1,0 +1,61 @@
+<p>header works!</p>
+
+<h1 class="red">Some text</h1>
+<h1 [ngClass]="{'red': true}">Some text</h1>
+<h1 [ngClass]="{'red': false}">Some text</h1>
+<h2 [ngClass]="{'red': isRed}">Some text 2</h2>
+<h3 [class.red]='true'>Some text 3</h3>
+<button (click)="changeStatus()">change</button>
+<h3 [ngClass]="isRed===true ? 'red' : 'blue'">Some text 3</h3>
+<hr>
+<h1 [ngStyle]="{'color': addColor}">Style block</h1>
+<h1 [style.color]="isRed===true ? 'yellow':'green'">Style block</h1>
+<!-- ngStyle ngClass -->
+<!-- ngIf  ngFor ngSwitch-->
+<!-- *ngIf="expression" -->
+<!-- <hr> -->
+<button (click)="toggle()">toggle</button>
+<!-- <p *ngIf="visability">lorem 1</p>
+<p *ngIf="!visability">lorem 2</p> -->
+
+<ng-container *ngIf="visability; else elseTemplate">
+      <p>lorem 1</p>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <p>lorem 2</p> 
+  </ng-template>
+<!-- 
+<ng-container *ngIf="visability; then thenTemplate; else elseTemplate"></ng-container>
+<ng-template #thenTemplate>
+  <p>lorem 1</p>
+</ng-template>
+<ng-template #elseTemplate>
+  <p>lorem 2</p>
+</ng-template> -->
+<!-- 
+<hr>
+<form action="">
+    <input type="text" [(ngModel)]="newPhone" name="newPhone">
+    <button *ngIf="!editStatus" (click)="add()">add</button>
+    <button *ngIf="editStatus" (click)="saveEdit()">save edit</button>
+</form> -->
+<!-- <table border="1">
+    <thead>
+        <th>#</th>
+        <th>name</th>
+        <th>edit</th>
+        <th>delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let phone of arrPhone; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{phone}}</td>
+            <td>
+                <button (click)="edit(i)">edit</button>
+            </td>
+            <td>
+                <button (click)="delete(i)" [disabled]="editStatus">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
